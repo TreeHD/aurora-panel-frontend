@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { Link } from 'react-router-dom'
+// import { Link } from 'react-router-dom'
 import { useSelector, useDispatch } from 'react-redux'
 import { Redirect } from 'react-router-dom'
 import { Label, Input, Button } from '@windmill/react-ui'
@@ -56,17 +56,17 @@ function Login() {
             <form className="w-full" onSubmit={submitForm}>
               <h1 className="mb-4 text-xl font-semibold text-gray-700 dark:text-gray-200">Login</h1>
               <Label>
-                <span>Email</span>
-                <Input className="mt-1" type="email" placeholder="john@doe.com" onChange={e => setEmail(e.target.value)} valid={validEmail()}/>
+                <span>帳號(電子郵件)</span>
+                <Input className="mt-1" type="email" placeholder="customer@sakuravm.net" onChange={e => setEmail(e.target.value)} valid={validEmail()}/>
               </Label>
 
               <Label className="mt-4">
-                <span>Password</span>
+                <span>密碼</span>
                 <Input className="mt-1" type="password" placeholder="***************" onChange={e => setPassword(e.target.value)} valid={validPassword()}/>
               </Label>
 
               <Button className="mt-4" block type="submit" disabled={!validForm()}>
-                Log in
+                登入
               </Button>
 
               <hr className="my-8" />
@@ -80,12 +80,12 @@ function Login() {
                 </Link>
               </p>
               <p className="mt-1"> */}
-                <Link
+                {/* <Link
                   className="text-sm font-medium text-purple-600 dark:text-purple-400 hover:underline"
                   to="/create-account"
                 >
                   Create account
-                </Link>
+                </Link> */}
               </p>
             </form>
           </main>

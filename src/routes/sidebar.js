@@ -15,13 +15,13 @@ const routes = [
   {
     path: '/app/servers',
     icon: 'Stack',
-    name: '服务器',
+    name: '伺服器',
     permissions: ['admin', 'ops', 'user'],
   },
   {
     path: '/app/about',
     icon: 'At',
-    name: '关于',
+    name: '關於',
     permissions: ['admin', 'ops', 'user'],
   },
 ]

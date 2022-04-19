@@ -28,20 +28,20 @@ const serverFactsToBadge = (system, permission) => {
   if (!system)
     return (
       <div className="">
-        <Badge type="warning">SSH状态未知</Badge>
+        <Badge type="warning">SSH狀態未知</Badge>
         {permission === "user" ? (
-          <span>请稍等片刻</span>
+          <span>請稍等片刻</span>
         ) : (
-            <span>请稍等片刻或重新编辑一次服务器以触发服务器状态更新</span>
+            <span>請稍等片刻或重新編輯一次服務器以觸發服務器狀態更新</span>
           )}
       </div>
     );
   if (!system.os_family)
     return (
       <div className="">
-        <Badge type="warning">SSH连接失败</Badge>
+        <Badge type="warning">SSH連接失敗</Badge>
         {permission === "user" ? (
-          <span>请通知管理员检查SSH连接信息</span>
+          <span>請通知管理員檢查SSH連接信息</span>
         ) : (
             <span className="">{system.msg}</span>
           )}
@@ -49,7 +49,7 @@ const serverFactsToBadge = (system, permission) => {
     );
   return (
     <div className="">
-      <Badge type="success">SSH连接成功</Badge>
+      <Badge type="success">SSH連接成功</Badge>
       <span>{`${system.distribution} ${system.distribution_version} (${system.distribution_release}) ${system.architecture}`}</span>
     </div>
   );
@@ -115,8 +115,8 @@ function Servers() {
                 <AuthSelector permissions={['admin', 'ops']}>
                   <TableCell>端口</TableCell>
                 </AuthSelector>
-                <TableCell>SSH状态</TableCell>
-                <TableCell>动作</TableCell>
+                <TableCell>SSH狀態</TableCell>
+                <TableCell>動作</TableCell>
               </tr>
             </TableHeader>
             <TableBody>
@@ -168,7 +168,7 @@ function Servers() {
                           history.push(`/app/servers/${server.id}/ports`);
                         }}
                       >
-                        查看端口
+                        查看端口/新增轉發
                     </ColoredButton>
                       <AuthSelector permissions={['admin', 'ops']}>
                         <ColoredButton
@@ -184,7 +184,7 @@ function Servers() {
                             setEditorOpen(true);
                           }}
                         >
-                          编辑服务器
+                          編輯服務器
                         </ColoredButton>
                       </AuthSelector>
                     </div>

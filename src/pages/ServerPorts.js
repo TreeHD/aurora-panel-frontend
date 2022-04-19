@@ -67,7 +67,7 @@ const statusToBadge = (rule, server, port) => {
           className="text-blue-600"
           to={`/app/servers/${server.id}/${port.id}/artifacts`}
         >
-          查看日志
+          查看日誌
         </Link>
       );
     } else {
@@ -93,20 +93,20 @@ const statusToBadge = (rule, server, port) => {
         } else if (rule.method === "node_exporter") {
           ret.push("node_exporter");
           ret.push(
-            `请添加${server.address}:${port.external_num ? port.external_num : port.num
+            `請添加${server.address}:${port.external_num ? port.external_num : port.num
             }到promethus.yml中`
           );
         } else {
           ret.push(rule.method);
         }
       } else if (status === "failed") {
-        ret.push(<Badge type="danger">端口功能部署失败</Badge>);
+        ret.push(<Badge type="danger">端口功能部署失敗</Badge>);
         ret.push(
           <Link
             className="text-blue-600"
             to={`/app/servers/${server.id}/${port.id}/artifacts`}
           >
-            查看日志
+            查看日誌
           </Link>
         );
         if (rule.config && rule.config.error) {
@@ -140,7 +140,7 @@ const usersToBadge = (history, users) => {
       </div>
     );
   }
-  return <Badge type="warning">此端口无人使用</Badge>;
+  return <Badge type="warning">此端口無人使用</Badge>;
 };
 
 const formatSpeed = (speed) => {
@@ -244,7 +244,7 @@ function ServerPorts() {
               setPortEditorOpen(true);
             }}
           >
-            添加端口
+            新增端口
           </Button>
         </AuthSelector>
       </div>
@@ -253,13 +253,13 @@ function ServerPorts() {
           <Table>
             <TableHeader>
               <tr>
-                <TableCell>端口号</TableCell>
-                <TableCell>备注</TableCell>
+                <TableCell>端口號</TableCell>
+                <TableCell>備註</TableCell>
                 <TableCell>功能</TableCell>
                 <TableCell>限速</TableCell>
                 <TableCell>流量</TableCell>
                 <TableCell>用户</TableCell>
-                <TableCell>动作</TableCell>
+                <TableCell>動作</TableCell>
               </tr>
             </TableHeader>
             <TableBody>
@@ -274,7 +274,7 @@ function ServerPorts() {
                             <Tooltip
                               tip={
                                 <span>
-                                  <Badge>内部端口</Badge>
+                                  <Badge>內部端口</Badge>
                                   {port.num}
                                 </span>
                               }
@@ -359,8 +359,7 @@ function ServerPorts() {
                           >
                             查看用户
                           </Button>
-                        </AuthSelector>
-                        <Button
+                          <Button
                           size="small"
                           onClick={() => {
                             setCurrentPort(port);
@@ -369,6 +368,8 @@ function ServerPorts() {
                         >
                           修改端口
                         </Button>
+                        </AuthSelector>
+                        
                         {port.forward_rule ? (
                           <>
                             <Button
@@ -390,7 +391,7 @@ function ServerPorts() {
                                   permission === "user")
                               }
                             >
-                              修改转发
+                              修改轉發
                             </Button>
                           </>
                         ) : (
@@ -402,7 +403,7 @@ function ServerPorts() {
                                 setRuleEditorOpen(true);
                               }}
                             >
-                              添加转发
+                              新增轉發
                             </Button>
                           )}
                       </div>

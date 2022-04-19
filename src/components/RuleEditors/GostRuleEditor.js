@@ -8,19 +8,19 @@ import { createForwardRule, editForwardRule } from "../../redux/actions/ports";
 
 const GostTemplates = [
   { label: "不使用模版", value: 0 },
-  { label: "直接端口转发（明文）", value: 1 },
+  { label: "直接端口轉發（明文）", value: 1 },
   { label: "tls 隧道客户端（入口）", value: 2 },
-  { label: "tls 隧道服务端（出口）", value: 3 },
+  { label: "tls 隧道服務端（出口）", value: 3 },
   { label: "ws 隧道客户端（入口）", value: 4 },
-  { label: "ws 隧道服务端（出口）", value: 5 },
+  { label: "ws 隧道服務端（出口）", value: 5 },
   { label: "wss 隧道客户端（入口）", value: 6 },
-  { label: "wss 隧道服务端（出口）", value: 7 },
+  { label: "wss 隧道服務端（出口）", value: 7 },
   { label: "kcp 隧道客户端（入口）", value: 8 },
-  { label: "kcp 隧道服务端（出口）", value: 9 },
+  { label: "kcp 隧道服務端（出口）", value: 9 },
   { label: "quic 隧道客户端（入口）", value: 10 },
-  { label: "quic 隧道服务端（出口）", value: 11 },
+  { label: "quic 隧道服務端（出口）", value: 11 },
   { label: "ssh 隧道客户端（入口）", value: 12 },
-  { label: "ssh 隧道服务端（出口）", value: 13 },
+  { label: "ssh 隧道服務端（出口）", value: 13 },
 ];
 
 const GostRuleEditor = ({
@@ -84,7 +84,7 @@ const GostRuleEditor = ({
           `tcp://:${port.external_num ? port.external_num : port.num}`,
           `udp://:${port.external_num ? port.external_num : port.num}`,
         ]);
-        setChainNodes([`relay+tls://隧道服务端IP:服务端端口`]);
+        setChainNodes([`relay+tls://隧道服務端IP:服務端端口`]);
         break;
       case "3":
         setServeNodes([`relay+tls://:${port.external_num ? port.external_num : port.num}/落地IP:落地端口`]);
@@ -95,7 +95,7 @@ const GostRuleEditor = ({
           `tcp://:${port.external_num ? port.external_num : port.num}`,
           `udp://:${port.external_num ? port.external_num : port.num}`,
         ]);
-        setChainNodes([`relay+ws://隧道服务端IP:服务端端口`]);
+        setChainNodes([`relay+ws://隧道服務端IP:服務端端口`]);
         break;
       case "5":
         setServeNodes([`relay+ws://:${port.external_num ? port.external_num : port.num}/落地IP:落地端口`]);
@@ -106,7 +106,7 @@ const GostRuleEditor = ({
           `tcp://:${port.external_num ? port.external_num : port.num}`,
           `udp://:${port.external_num ? port.external_num : port.num}`,
         ]);
-        setChainNodes([`relay+wss://隧道服务端IP:服务端端口`]);
+        setChainNodes([`relay+wss://隧道服務端IP:服務端端口`]);
         break;
       case "7":
         setServeNodes([`relay+wss://:${port.external_num ? port.external_num : port.num}/落地IP:落地端口`]);
@@ -117,7 +117,7 @@ const GostRuleEditor = ({
           `tcp://:${port.external_num ? port.external_num : port.num}`,
           `udp://:${port.external_num ? port.external_num : port.num}`,
         ]);
-        setChainNodes([`relay+kcp://隧道服务端IP:服务端端口`]);
+        setChainNodes([`relay+kcp://隧道服務端IP:服務端端口`]);
         break;
       case "9":
         setServeNodes([`relay+kcp://:${port.external_num ? port.external_num : port.num}/落地IP:落地端口`]);
@@ -128,7 +128,7 @@ const GostRuleEditor = ({
           `tcp://:${port.external_num ? port.external_num : port.num}`,
           `udp://:${port.external_num ? port.external_num : port.num}`,
         ]);
-        setChainNodes([`relay+quic://隧道服务端IP:服务端端口`]);
+        setChainNodes([`relay+quic://隧道服務端IP:服務端端口`]);
         break;
       case "11":
         setServeNodes([`relay+quic://:${port.external_num ? port.external_num : port.num}/落地IP:落地端口`]);
@@ -139,7 +139,7 @@ const GostRuleEditor = ({
           `tcp://:${port.external_num ? port.external_num : port.num}`,
           `udp://:${port.external_num ? port.external_num : port.num}`,
         ]);
-        setChainNodes([`relay+ssh://隧道服务端IP:服务端端口`]);
+        setChainNodes([`relay+ssh://隧道服務端IP:服務端端口`]);
         break;
       case "13":
         setServeNodes([`relay+ssh://:${port.external_num ? port.external_num : port.num}/落地IP:落地端口`]);
@@ -204,7 +204,7 @@ const GostRuleEditor = ({
       </Label>
       <Label className="mt-4 flex flex-row justify-between items-center">
         <div className="flex flex-auto">
-          <span>重试次数</span>
+          <span>重試次數</span>
         </div>
         <div className="flex flex-3 items-center">
           <button
@@ -231,7 +231,7 @@ const GostRuleEditor = ({
         </div>
       </Label>
       <Label className="mt-4 flex flex-row justify-between items-center">
-        <span>本地服务配置(-L)</span>
+        <span>本地服務配置(-L)</span>
         <button
           className="w-5 h-5 px-1 text-sm font-medium leading-5 text-white transition-colors duration-150 bg-green-400 border border-transparent rounded active:bg-green-600 hover:bg-green-600 focus:outline-none focus:shadow-outline-green"
           onClick={() => setServeNodes(serveNodes.concat([""]))}
@@ -268,7 +268,7 @@ const GostRuleEditor = ({
         </Label>
       ))}
       <Label className="mt-4 flex flex-row justify-between items-center">
-        <span>转发服务配置(-F)</span>
+        <span>轉發服務配置(-F)</span>
         <button
           className="w-5 h-5 px-1 text-sm font-medium leading-5 text-white transition-colors duration-150 bg-green-400 border border-transparent rounded active:bg-green-600 hover:bg-green-600 focus:outline-none focus:shadow-outline-green"
           onClick={() => setChainNodes(chainNodes.concat([""]))}

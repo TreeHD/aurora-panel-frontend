@@ -8,15 +8,15 @@ import { createForwardRule, editForwardRule } from "../../redux/actions/ports";
 
 const ModeOptions = [{ label: "TCP", value: "tcp" }];
 const SendProxyOptions = [
-  { label: "无", value: "" },
+  { label: "無", value: "" },
   { label: "V1", value: "send-proxy" },
   { label: "V2", value: "send-proxy-v2" },
 ];
 const BalanceModeOptions = [
-  { label: "轮询", value: "roundrobin" },
-  { label: "最小连接数优先", value: "leastconn" },
-  { label: "源IP地址匹配", value: "source" },
-  { label: "顺序优先", value: "first" },
+  { label: "輪詢", value: "roundrobin" },
+  { label: "最小連接數優先", value: "leastconn" },
+  { label: "來源IP位置匹配", value: "source" },
+  { label: "順序優先", value: "first" },
 ];
 
 const HaproxyRuleEditor = ({
@@ -112,7 +112,7 @@ const HaproxyRuleEditor = ({
     <>
       <Label className="mt-4">
         <div className="flex flex-row justify-between items-center mt-1">
-          <span className="w-1/2">转发类型</span>
+          <span className="w-1/2">轉發類型</span>
           <Select
             className="w-1/2"
             value={mode}
@@ -128,7 +128,7 @@ const HaproxyRuleEditor = ({
       </Label>
       <Label className="mt-4">
         <div className="flex flex-row justify-between items-center mt-1">
-          <span className="w-1/2">负载均衡模式</span>
+          <span className="w-1/2">負載均衡</span>
           <Select
             className="w-1/2"
             value={balanceMode}
@@ -147,7 +147,7 @@ const HaproxyRuleEditor = ({
       </Label>
       <Label className="mt-4">
         <div className="flex flex-row justify-between items-center mt-1">
-          <span className="w-1/2">最大连接数</span>
+          <span className="w-1/2">最大連接數</span>
           <Input
             className="w-1/2"
             value={maxConn}
@@ -177,7 +177,7 @@ const HaproxyRuleEditor = ({
       </Label>
 
       <Label className="mt-4 flex flex-row justify-between items-center">
-        <span>目标地址端口</span>
+        <span>轉發目標(IP:Port)</span>
         <button
           className="w-5 h-5 px-1 text-sm font-medium leading-5 text-white transition-colors duration-150 bg-green-400 border border-transparent rounded active:bg-green-600 hover:bg-green-600 focus:outline-none focus:shadow-outline-green"
           onClick={() => setBackendNodes(backendNodes.concat([""]))}
