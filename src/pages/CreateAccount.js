@@ -4,8 +4,8 @@ import { useSelector, useDispatch } from 'react-redux'
 import { Input, Label, Button } from '@windmill/react-ui'
 
 import { signUp } from '../redux/actions/auth'
-import ImageLight from '../assets/img/create-account-office.jpeg'
-import ImageDark from '../assets/img/create-account-office-dark.jpeg'
+import ImageLight from '../assets/img/logo.jpeg'
+import ImageDark from '../assets/img/logo.jpeg'
 
 function Login() {
   const dispatch = useDispatch()

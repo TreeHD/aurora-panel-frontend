@@ -4,8 +4,8 @@ import { useSelector, useDispatch } from 'react-redux'
 import { Redirect } from 'react-router-dom'
 import { Label, Input, Button } from '@windmill/react-ui'
 
-import ImageLight from '../assets/img/login-office.jpeg'
-import ImageDark from '../assets/img/login-office-dark.jpeg'
+import ImageLight from '../assets/img/logo.jpeg'
+import ImageDark from '../assets/img/logo.jpeg'
 import { login } from "../redux/actions/auth";
 import { getMe } from "../redux/actions/users"
 
